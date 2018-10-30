@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="fileWrite" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="/home/jenita.kn/logs/chemaxonProject_REST.log" />
+        <param name="Append" value="true" />
+        <param name="MaxFileSize" value="500KB" />
+        <param name="MaxBackupIndex" value="5" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{MMM dd HH:mm:ss}] %5p %c (%M:%F:%L) - %m%n" />
+        </layout>
+    </appender>
+    <root>
+        <priority value="info" />
+        <appender-ref ref="fileWrite" />
+    </root>
+</log4j:configuration>
